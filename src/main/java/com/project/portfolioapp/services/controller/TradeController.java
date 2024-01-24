@@ -1,7 +1,7 @@
-package com.project.portfolioapp.controller;
+package com.project.portfolioapp.services.controller;
 
-import com.project.portfolioapp.model.Trade;
-import com.project.portfolioapp.services.TradeService;
+import com.project.portfolioapp.services.model.Trade;
+import com.project.portfolioapp.services.services.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

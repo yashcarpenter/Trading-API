@@ -1,6 +1,6 @@
-package com.project.portfolioapp.model;
+package com.project.portfolioapp.services.DTO.model;
 
-import com.project.portfolioapp.DTO.PortfolioListDTO;
+import com.project.portfolioapp.services.DTO.DTO.PortfolioListDTO;
 import lombok.Data;
 
 import java.util.List;

@@ -1,15 +1,14 @@
-package com.project.portfolioapp.services;
+package com.project.portfolioapp.services.DTO.services.services;
 
-import com.project.portfolioapp.DTO.PortfolioListDTO;
-import com.project.portfolioapp.model.*;
-import com.project.portfolioapp.repository.PortfolioRepository;
-import com.project.portfolioapp.repository.StockRepository;
+import com.project.portfolioapp.services.DTO.services.DTO.PortfolioListDTO;
+import com.project.portfolioapp.services.DTO.services.model.*;
+import com.project.portfolioapp.services.DTO.services.repository.PortfolioRepository;
+import com.project.portfolioapp.services.DTO.services.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -113,21 +112,20 @@ public class PortfolioService {
         return totalHoldings;
     }
 
-    public static double calculateTotalBuyPrice(List<PortfolioListDTO> portfolioList) {
+    public double calculateTotalBuyPrice(List<PortfolioListDTO> portfolioList) {
         // Using Java Stream API to calculate the total buy price
         double totalBuyPrice = portfolioList.stream()
-                .mapToDouble(portfolio -> portfolio.getBuyPrice() * portfolio.getQuantity())
+                .mapToDouble(PortfolioListDTO::getBuyPrice)
                 .sum();
 
         return totalBuyPrice;
     }
-    public static double calculateTotalProfitLoss(List<PortfolioListDTO> portfolioList) {
+
+    public double calculateTotalProfitLoss(List<PortfolioListDTO> portfolioList) {
         // Using Java Stream API to calculate the total gain/loss
-        double totalGainLoss = portfolioList.stream()
+        return portfolioList.stream()
                 .mapToDouble(PortfolioListDTO::getGainLoss)
                 .sum();
-
-        return totalGainLoss;
     }
 
     public Portfolio getPortfolio(String userId) {

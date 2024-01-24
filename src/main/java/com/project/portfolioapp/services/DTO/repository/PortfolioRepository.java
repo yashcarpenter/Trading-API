@@ -1,6 +1,6 @@
-package com.project.portfolioapp.repository;
-import com.project.portfolioapp.model.PortfolioList;
-import com.project.portfolioapp.model.UserStockId;
+package com.project.portfolioapp.services.DTO.repository;
+import com.project.portfolioapp.services.DTO.model.PortfolioList;
+import com.project.portfolioapp.services.DTO.model.UserStockId;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
